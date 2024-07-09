@@ -34,3 +34,22 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Add postgres to project
+`pnpm i postgres`
+
+## install postgres.app and pgadmin4 on mac
+
+`touch .env.local` Add url
+
+`DATABASE_URL="postgresql://<username>:<password>@<host>:<port>/<databaseservername>"`
+
+If no password then
+`DATABASE_URL="postgresql://<username>@<host>:<port>/<databaseservername>"`
+## Table Scripts
+CREATE TABLE IF NOT EXISTS "Quiz"."Quizzes"
+(
+quiz_id integer NOT NULL,
+title character varying(100) COLLATE pg_catalog."default" NOT NULL,
+CONSTRAINT "Quizzes_pkey" PRIMARY KEY (quiz_id)
+)
